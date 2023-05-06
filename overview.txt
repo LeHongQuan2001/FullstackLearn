@@ -1,0 +1,70 @@
+// Tổng quan về học phần reactjs
+// ES6
+// Reactjs
+1. Reactjs Basic
+    - Làm việc với Reactjs cơ bản
+    - mini project 1: Ứng dụng quản lý (student, product,...)=>
+    => Hiển thị, tìm kiếm, sắp xếp
+    => Xem / thêm / sửa / xóa
+2. Redux
+    - Làm việc với các khái niệm cơ bản trong Redux
+    - mini project 2: Ứng dụng (todo list / toro app / shopping cart)
+3. React Hook
+    - Làm việc với các khái niệm cơ bản của Hook ()
+    - mini project 3: Xây dựng ứng dụng TodoApp với Hook
+4. Route / Mock API 
+    - Các khái niệm và các thành phần cơ bản của Hook ()
+    - Demo / lab
+5. Mock project
+    => từ project FE => Xây dựng dưới dạng Mock API
+    => Hoàn thiện ứng dụng với Reactjs     
+
+
+    (Tạo mới 1 ứng dụng)
+    1. npx create-react-app tên file
+    2. cd tên file
+    3. npm start.
+
+
+    ##Thực hiện
+    1.Tạo ứng dụng reactjs -> chuyển function app => Class app
+    2.Sử dụng https://transform.tools/html-to-jsx?fbclid=IwAR2N2_ChzkqP8Kup1L6rvoQp5-wlQ7R0Y_8DhfNEdR7Bbpx7QHLoddCb_pE => để chuyển html sang jsx
+    3.Sao chép mã htmk snag App.js  
+        - Copy thư mục css vào public
+        - Thêm liên kết css
+    4. Phân chia các components
+        - App
+            + Controll
+            + ListStudent
+                + Student.js
+            + Form 
+        - Tách thành các component
+    5. Chức năng hiển thị dữ liệu từ mock data
+        -App:
+            + this.state = {...}
+        - App -> props -> ListStudent -> props -> Student   
+
+    6.Ẩn hiện form (chức năng : thêm, sửa, xóa)
+        -Render component form theo điều kiện (trạng thái ẩn / hiện)
+        - tạo state isToggle trong App có giá trị mặc định là false
+            -> khi người dùng click vào thêm mới, xem , sửa , xóa thì cập nhật
+            isToggle = true
+
+    7. Xử lý chức năng form khi click vào thêm mới.
+        - Control component:
+            + event click -> chuyển lên App thông qua props (onToggle)
+            + trên app: tạo 1 arrow function -> Cập nhật isToggle:true
+    
+    8. Xử lý khi click vào nút xem trên student component
+    - Student component
+        + event click -> chuyển lên ListStudent (toggle) -> App
+        + App: -> Form -> (Close)
+
+    9. Xử lý chức năng sửa khi người dùng click vào edit trên Student
+    - Student component
+        + event click -> chuyển lên ListStudent (toggle) -> App
+        + App: -> Form -> (Update)
+
+    10. Xử lý nút submit trên form
+        -xử lý  đóng form (close)
+        -Xử lý Update
